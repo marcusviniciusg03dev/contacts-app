@@ -1,0 +1,14 @@
+{
+    "exclude": [
+        "vendor"
+    ],
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "jsx": "react",
+        "types": [
+            "vite/client"
+        ]
+    },
+}
