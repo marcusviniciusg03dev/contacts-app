@@ -2,7 +2,7 @@
     border-bottom: 1px solid rgb(0 0 0 / 5%);
 }
 
-#register-person-and-contacts-area > form {
+#register-person-and-contacts-area>form {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -82,4 +82,15 @@
 
 #contacts-fill-table>thead>tr>th {
     padding: .5rem;
+}
+
+@media screen and (max-width: 600px) {
+    #register-person-and-contacts-area>form {
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #contacts-fill-table {
+        width: 90vw;
+    }
 }

@@ -10,7 +10,12 @@
 
 #people-contacts-table {
     background-color: #fff;
-    width: 50vw;
+}
+
+@media screen and (min-width: 1200px) {
+    #people-contacts-table {
+        width: 50vw;
+    }
 }
 
 #people-contacts-table>tbody {
