@@ -1,0 +1,49 @@
+#person-data-listing-area {
+    display: flex;
+    flex-direction: column;
+}
+
+#overflow {
+    overflow: auto;
+    display: flex;
+}
+
+#people-contacts-table {
+    background-color: #fff;
+    width: 50vw;
+}
+
+#people-contacts-table>tbody {
+    border: 0px solid #d6d9f6;
+}
+
+#people-contacts-table>thead>tr>th,
+#people-contacts-table>tbody>tr>td {
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#people-contacts-table>tbody>tr:nth-child(even) {
+    background-color: #e9eafb;
+}
+
+#people-contacts-table>thead>tr>th>span {
+    display: flex;
+    justify-content: space-between;
+}
+
+#sort-arrow {
+    cursor: pointer;
+}
+
+#sort-arrow>svg {
+    transition: transform .4s;
+}
+
+#sort-arrow::after {
+    font-size: 20px;
+}
+
+#people-contacts-table>tfoot>tr {
+    padding: 1rem;
+}

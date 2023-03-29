@@ -1,0 +1,85 @@
+#register-person-and-contacts-area {
+    border-bottom: 1px solid rgb(0 0 0 / 5%);
+}
+
+#register-person-and-contacts-area > form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#register-person-area {
+    display: flex;
+    flex-direction: column;
+}
+
+#register-person-labels-inputs-area {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+#register-person-labels-inputs-area>span {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: .5rem;
+}
+
+#register-person-labels-area {
+    justify-content: space-around;
+    padding: 2rem;
+}
+
+#register-person-inputs-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.person-registering-input {
+    padding: .2rem;
+}
+
+.person-registering-input {
+    padding: .5rem;
+    border: 2px solid #131178;
+    border-radius: 3px;
+}
+
+#register-person-button {
+    padding: 1rem 2rem;
+    background-color: #131178;
+    color: #fafafa;
+    border: 0;
+    border-radius: 4px;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+#register-person-button:disabled {
+    filter: opacity(.5);
+    cursor: progress;
+}
+
+#contact-inputs-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contacts-fill-table {
+    width: 35vw;
+}
+
+#contacts-fill-table>tbody>tr>td>input {
+    padding: .25rem;
+    background-color: transparent;
+    border: 1px solid #c9cce7;
+    width: 100%;
+}
+
+#contacts-fill-table>tbody>tr>td>input:focus {
+    outline: 1px solid #0000001e;
+}
+
+#contacts-fill-table>thead>tr>th {
+    padding: .5rem;
+}

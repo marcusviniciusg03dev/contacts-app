@@ -10,8 +10,11 @@ class RegisterPersonAndContactController extends Controller
 {
     public function handleReq(Request $request)
     {
-
-        $person = $request->input('person');
+        $person = [
+            'name' => $request->input('name'),
+            'cpf' => $request->input('cpf'),
+            'address' => $request->input('address'),
+        ];
         $contacts = $request->input('contacts');
 
         return RegisterPersonAndContactService::execute($person, $contacts);

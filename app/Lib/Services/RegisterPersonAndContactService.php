@@ -42,7 +42,7 @@ class RegisterPersonAndContactService
             $telephoneDescription = $contact['telephone_description'];
 
             if (!isset($telephone) || !isset($telephoneDescription)) {
-                throw new Exception('telephone and telephone description must be set.');
+                throw new Exception('telephone and it\'s description must be set.');
             }
 
             if (strlen($contact['telephone']) !== 11) {
@@ -66,6 +66,14 @@ class RegisterPersonAndContactService
             ]);
         }
 
-        return ['person' => $person, 'contacts' => $contacts];
+        return [
+            'id' => $createdPerson->id,
+            'name' => $createdPerson['name'],
+            'cpf' => $createdPerson['cpf'],
+            'address' => $createdPerson['address'],
+            'created_at' => $createdPerson['created_at'],
+            'updated_at' => $createdPerson['updated_at'],
+            'contacts' => $contacts,
+        ];
     }
 };
