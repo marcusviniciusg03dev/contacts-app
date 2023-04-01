@@ -10,4 +10,9 @@ export default defineConfig({
         }),
         react()
     ],
+    resolve: {
+        alias: {
+            '*': './node_modules/*'
+        }
+    }
 });

@@ -8,10 +8,10 @@ import '../../../../css/RegisterPersonArea.css';
 import usePeopleContacts from "../../Hooks/usePeopleContacts";
 import ContactFilling from "./ContactFilling";
 import { IContact } from "../../Types/IContact";
+import { toast } from "react-toastify";
 
 export default () => {
     const [sending, setSending] = React.useState(false);
-
     const { addPersonContactsToList } = usePeopleContacts()
 
     const handleAddPersonAndContacts = async (e) => {
@@ -28,19 +28,16 @@ export default () => {
             const telephone_description = (contactsPhoneDesc[index] as HTMLInputElement).value;
 
             if (telephone) {
-                contacts
-                    .push({ telephone: telephone.replace(/\D/g, ''), telephone_description });
+                contacts.push({ telephone: telephone.replace(/\D/g, ''), telephone_description });
             };
         }
 
         if (contacts.length == 0) {
-            alert('O número mínimo de contatos é de 1.');
-            return;
+            return toast.error('O número mínimo de contatos é de 1.');
         }
 
         if (contacts.some(contact => !contact.telephone_description)) {
-            alert('A descrição do telefone não pode estar vazia.');
-            return;
+            return toast.error('A descrição do telefone não pode estar vazia.');
         }
 
         setSending(true);
@@ -61,7 +58,7 @@ export default () => {
             addPersonContactsToList(registerResponse.data)
         } catch (error) {
             if (error.response.data.message == 'person already exists.') {
-                alert('Erro: Pessoa já cadastrada.');
+                return toast.error('Pessoa já cadastrada.');
             }
         } finally {
             setSending(false);
